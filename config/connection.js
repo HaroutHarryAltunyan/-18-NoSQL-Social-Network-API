@@ -4,10 +4,7 @@ const mongoose = require('mongoose');
 const connectionString = 'mongodb://127.0.0.1:27017/socialNetworkDB';
 
 // Connect to MongoDB
-mongoose.connect(connectionString, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+mongoose.connect(connectionString);
 
 // Event listeners for connection events
 mongoose.connection.on('connected', () => {
@@ -23,6 +20,44 @@ mongoose.connection.on('disconnected', () => {
 });
 
 module.exports = mongoose.connection;
+
+
+
+
+//incorrect code : 
+
+
+
+// const mongoose = require('mongoose');
+
+// // MongoDB connection string
+// const connectionString = 'mongodb://127.0.0.1:27017/socialNetworkDB';
+
+// // Connect to MongoDB
+// mongoose.connect(connectionString, {
+//   useNewUrlParser: true,
+//   useUnifiedTopology: true,
+// });
+
+// // Event listeners for connection events
+// mongoose.connection.on('connected', () => {
+//   console.log(`Mongoose connected to ${connectionString}`);
+// });
+
+// mongoose.connection.on('error', (err) => {
+//   console.error(`Mongoose connection error: ${err}`);
+// });
+
+// mongoose.connection.on('disconnected', () => {
+//   console.log('Mongoose disconnected');
+// });
+
+// module.exports = mongoose.connection;
+
+
+
+
+
 
 
 //from miniproject
